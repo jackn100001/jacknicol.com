@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, p {
 .desktop {
 	position:relative;
   	width: 100%;
-  	height:94%;
+  	height: 95vh;
   	background: #017d80;
 }
 .logo {
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, p {
 }
 .text-doc, .application {
 	color: #fff;
-	font-size: 4rem;
+	font-size: 3rem;
 }
 .icon-row {
 	display: flex;
@@ -55,11 +55,11 @@ h1, h2, h3, h4, h5, p {
 }
 
 footer {
-	height: 6%;
+	height: 5vh;
 	background: #d6d4d4;
 	display: flex;
 	justify-content: space-between;
-	padding: 5px;
+	padding: 2px;
 	box-sizing:border-box;
 }
 
@@ -86,6 +86,11 @@ footer .start-button {
 	border-bottom: 2px solid #000;
 }
 
+footer .start-button img {
+	width: 30px;
+	height: auto;
+}
+
 footer .start-button:active {
 	transform: translateY(1px);
 	border-left: 2px solid #000;
@@ -95,7 +100,7 @@ footer .start-button:active {
 }
 
 footer .start-button span {
-	font-size: 1.55rem;
+	font-size: 1.35rem;
 }
 
 .window {
@@ -180,3 +185,92 @@ footer .start-button span {
 }
 
 /* Media Queries */
+@media screen and (max-width: 992px) {
+	.text-doc, .application {
+	    color: #fff;
+	    font-size: 2.5rem;
+	}
+	.icon p {
+		font-size: 0.9rem;
+	}
+	.logo h3 {
+	    font-size: 2.5rem;
+	}
+	footer .start-button img {
+		width: 25px;
+		height: auto;
+	}
+	footer .start-button span {
+		font-size: 1.30rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.desktop {
+	  	height: 94vh;
+	}
+	.text-doc, .application {
+	    color: #fff;
+	    font-size: 2rem;
+	}
+	.icon p {
+		font-size: 0.8rem;
+	}
+	.logo h3 {
+	    font-size: 2.5rem;
+	}
+	footer {
+		height: 6vh;
+	}
+	footer .start-button img {
+		width: 22px;
+		height: auto;
+	}
+	footer .start-button span {
+		font-size: 1rem;
+	}
+}
+
+@media only screen and (max-height: 414px) {
+	.desktop {
+	  	height: 93vh;
+	}
+	.icon {
+	    text-align: center;
+	    width: 70px;
+	    padding-left: 0;
+	    padding-bottom: 0.1rem;
+	}
+	.text-doc, .application {
+	    color: #fff;
+	    font-size: 1.4rem;
+	}
+	.icon p {
+		font-size: 0.5rem;
+		margin-top: 0.2rem;
+	}
+	.logo {
+	    position: absolute;
+	    bottom: 0;
+	    right: 0;
+	    margin-right: 2rem;
+	    margin-bottom: 2rem;
+	}
+	.logo h3 {
+	    font-size: 2rem;
+	}
+	footer {
+		height: 7vh;
+		padding: 2px;
+	}
+	footer .start-button img {
+		width: 18px;
+		height: auto;
+	}
+	footer .start-button span {
+		font-size: 0.8rem;
+	}
+	footer .datetime {
+		font-size: 0.8rem;
+	}
+}
