@@ -165,6 +165,7 @@ footer .start-button span {
 	padding-left: 1px;
 	padding-top: 5px;
 	height: 100%;
+	overflow-y: hidden;
 }
 
 .window .window-content textarea {
@@ -174,6 +175,7 @@ footer .start-button span {
     height: 100%;
     width: 100%;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     padding: 0;
     font-family: courier !important;
     font-size: 1rem;
