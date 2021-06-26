@@ -1,8 +1,8 @@
-the site is still a WIP...
+the site is still a work in progress...
 ui and functionality updates coming soon! :-)
 
 -- future ui updates
-	offset window position when opened if they open on top of another window
+	offset window position when opened overlapping another window
 
 -- future functionality updates
 	make start button do something
