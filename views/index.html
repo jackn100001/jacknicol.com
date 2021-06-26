@@ -109,7 +109,7 @@
 		$(document).ready(function() {
 			var dt = new Date();
 			var ampm = (dt.getHours() >= 12) ? "PM" : "AM";
-			var time = dt.getHours() + ":" + dt.getMinutes().toString().padStart(2, '0') + " " + ampm;
+			var time = dt.getHours().toString().padStart(2, '0') + ":" + dt.getMinutes().toString().padStart(2, '0') + " " + ampm;
 			
 			$(".datetime").text(time);
 
