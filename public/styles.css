@@ -152,6 +152,7 @@ footer .start-button span {
     align-items: center;
     width: 100%;
     height: 100%;
+    background: #d6d4d4;
 }
 
 .window .window-bar .window-controls .close-window:active {
