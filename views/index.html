@@ -10,7 +10,7 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="https://use.fontawesome.com/5ed5eb6595.js"></script>
-
+	<script src="jquery.ui.touch-punch.min.js"></script>
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="/styles.css">
 </head>
@@ -137,8 +137,7 @@
 		});
 
 		$(document).on("click", ".close-window", function() {
-			console.log("TEST");
-				$(this).closest(".window").remove();
+			$(this).closest(".window").remove();
 		});
 	</script>
 </body>
