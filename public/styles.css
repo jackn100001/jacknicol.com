@@ -13,7 +13,7 @@ h1, h2, h3, h4, h5, p {
 .desktop {
 	position:relative;
   	width: 100%;
-  	height:95%;
+  	height:94%;
   	background: #017d80;
 }
 .logo {
@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, p {
 }
 
 footer {
-	height: 5%;
+	height: 6%;
 	background: #d6d4d4;
 	display: flex;
 	justify-content: space-between;
