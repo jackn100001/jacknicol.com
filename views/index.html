@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Jack Nicol</title>
+	
+	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://use.fontawesome.com/5ed5eb6595.js"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+	<div class="desktop">
+		<div class="icon-row">
+			<!-- <div class="icon">
+				<a href="javascript:void(0)"><i class="fa fa-folder folder"></i></a>
+				<p>Folder</p>
+			</div>
+			<div class="icon-row">
+				<div class="icon">
+					<a href="javascript:void(0)"><i class="fa fa-folder-open folder"></i></a>
+					<p>Open Folder</p>
+				</div>
+			</div> -->
+		</div>
+		<div class="icon-row">
+			<div class="icon" data-window="about">
+				<a href="javascript:void(0)"><i class="fa fa-file-text text-doc"></i></a>
+				<p>about.txt</p>
+			</div>
+		</div>
+
+		<div class="icon-row">
+			<div class="icon" data-window="portfolio">
+				<a href="javascript:void(0)"><i class="fa fa-file-text text-doc"></i></a>
+				<p>portfolio.txt</p>
+			</div>
+		</div>
+
+		<div class="icon-row">
+			<div class="icon" data-window="devlog">
+				<a href="javascript:void(0)"><i class="fa fa-file-text text-doc"></i></a>
+				<p>devlog.txt</p>
+			</div>
+		</div>
+
+		<div class="icon-row">
+			<div class="icon" data-window="none">
+				<a href="mailto:business.jacknicol@gmail.com"><i class="fa fa-envelope application"></i></a>
+				<p>Email.exe</p>
+			</div>
+		</div>
+		
+		<div class="icon-row">
+			<div class="icon" data-window="none">
+				<a href="https://linkedin.com/in/jack-nicol-423052214" target="_blank"><i class="fa fa-linkedin application"></i></a>
+				<p>LinkedIn.exe</p>
+			</div>
+		</div>
+
+		<div class="icon-row">
+			<div class="icon" data-window="none">
+				<a href="https://github.com/jackn100001" target="_blank"><i class="fa fa-github application"></i></a>
+				<p>GitHub.exe</p>
+			</div>
+		</div>
+		
+		<div class="logo">
+			<h3>Jack<span>OS</span></h3>
+		</div>
+	</div>
+	<footer>
+		<div class="left">
+			<!-- Start button here -->
+			<div class="tray-item start-button">
+				<img src="/os-logo.png" width="40px" height="auto">
+				<span>Start</span>
+			</div>
+			<!-- Open windows here -->
+		</div>
+		<div class="right">
+			<!-- Tray here -->
+			<div class="tray-item datetime">
+				Time and date here
+			</div>
+		</div>
+	</footer>
+
+	<div class="window hidden" id="window-template">
+		<div class="window-bar">
+			<div class="window-title">
+				<i class="fa fa-file-text"></i>
+			</div>
+			<div class="window-controls">
+				<button type="button" class="close-window"><i class="fa fa-times"></i></button>
+			</div>
+		</div>
+		<div class="window-content">
+			<textarea></textarea>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var dt = new Date();
+			var ampm = (dt.getHours() >= 12) ? "PM" : "AM";
+			var time = dt.getHours() + ":" + dt.getMinutes().toString().padStart(2, '0') + " " + ampm;
+			
+			$(".datetime").text(time);
+
+			$(".icon").on("click", function() {
+				var windowName = $(this).data('window');
+
+				if ($("#" + windowName).length == 0 && windowName != "none") {
+					var $windowElem = $("#window-template").clone();
+					$windowElem.attr("id", windowName);
+					$windowElem.removeClass("hidden");
+					$windowElem.draggable();
+					$windowElem.find(".window-title").append(windowName + ".txt");
+
+					$.ajax({
+						url: "/text-file?filename=" + windowName,
+						type: "GET",
+						success: function(res) {
+							$windowElem.find(".window-content textarea").val(res)
+						}
+					})
+
+					$("body").append($windowElem);
+				}
+			});
+		});
+
+		$(document).on("click", ".close-window", function() {
+			console.log("TEST");
+				$(this).closest(".window").remove();
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+the site is still a WIP...
+ui and functionality updates coming soon! :-)
+
+-- future ui updates
+	offset window position when opened if they open on top of another window
+
+-- future functionality updates
+	make start button do something
+	make open windows appear as tasks in task bar
+	make window resizable
