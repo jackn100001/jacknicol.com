@@ -15,7 +15,6 @@ const port = process.env.PORT || "8000";
 /**
  *  App Configuration
  */
-app.set("views", path.join(__dirname, "views"));
 app.use(express.static(__dirname + '/public'));
 
 /**
@@ -28,10 +27,8 @@ app.get("/", (req, res) => {
 app.get("/text-file", (req, res) => {
     var filename = req.query.filename + ".txt";
     var fs = require('fs');
-    fs.readFile("public/" + filename, 'utf8', function(err, data) {
+    fs.readFile("public/text/" + filename, 'utf8', function(err, data) {
         if (err) throw err;
-        console.log('OK: ' + filename);
-        console.log(data)
         res.send(data);
     });
 });
