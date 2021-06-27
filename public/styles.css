@@ -235,6 +235,50 @@ footer .start-button span {
 	}
 }
 
+@media only screen and (max-height: 674px) {
+	.desktop {
+	  	height: 94vh;
+	}
+	.icon {
+	    text-align: center;
+	    width: 70px;
+	    padding-left: 0;
+	    padding-bottom: 0.1rem;
+	}
+	.text-doc, .application {
+	    color: #fff;
+	    font-size: 1.8rem;
+	}
+	.icon p {
+		font-size: 0.6rem;
+		margin-top: 0.3rem;
+	}
+	.logo {
+	    position: absolute;
+	    bottom: 0;
+	    right: 0;
+	    margin-right: 2.5rem;
+	    margin-bottom: 2.5rem;
+	}
+	.logo h3 {
+	    font-size: 2.5rem;
+	}
+	footer {
+		height: 6vh;
+		padding: 2px;
+	}
+	footer .start-button img {
+		width: 20px;
+		height: auto;
+	}
+	footer .start-button span {
+		font-size: 0.9rem;
+	}
+	footer .datetime {
+		font-size: 0.9rem;
+	}
+}
+
 @media only screen and (max-height: 414px) {
 	.desktop {
 	  	height: 93vh;
