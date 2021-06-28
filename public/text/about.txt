@@ -1,11 +1,9 @@
 Welcome visitor, I am Jack.
 
-I built this site as a bit of fun and to showcase some of my skills.
+I built this site as a bit of fun and to showcase some of my skills. Note that it is still a work in progress, with many updates planned.
 
-A little about me: I am a keen and ambitious web developer with over 2 years of web development experience under my belt. I also have an interest in cybersecurity and hope to someday pursue a career in the field.
+A little about me: I am a keen and ambitious web developer with over 2 years of web development experience under my belt. I also have an interest in cyber security and hope to someday pursue a career in the field.
 
-My weapons of choice are PHP/Laravel for backend, MySQL for databases, and HTML, CSS, JavaScript and jQuery for frontend.
-
-I also know a bit of Python and enjoy using it when possible.
+My weapons of choice are PHP/Laravel for backend, MySQL for databases, and HTML, CSS, JavaScript and jQuery for frontend. I also know some Python.
 
 I enjoy coding, gaming, building websites and learning about cybersecurity.
