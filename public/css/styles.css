@@ -54,6 +54,51 @@ h1, h2, h3, h4, h5, p {
 	color: #fff;
 	margin-top: 0.5rem
 }
+#start-menu {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	min-width: 150px;
+	width: 17%; 
+	height: 40vh;
+	border-left: 2px solid #fff;
+	border-top: 2px solid #fff;
+	border-right: 2px solid #000;
+	border-bottom: 2px solid #000;
+	background: #d6d4d4;
+}
+.menu-items {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: start;
+	overflow: hidden;
+}
+.menu-items .menu-item {
+	width: 100%;
+	height: 100%;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+	padding-left: 0.5rem;
+	border-bottom: 1px solid black;
+}
+.menu-items .menu-item:hover {
+	background: #b8b6b6;
+	cursor: pointer;
+}
+.menu-items .menu-item .menu-icon {
+	display: flex;
+	align-items: center;
+}
+.menu-items .menu-item .menu-icon a {
+	text-decoration: none;
+	color: #000;
+}
+.menu-items .menu-item .menu-icon a:visited {
+	color: #000;
+}
 
 footer {
 	height: 5vh;
@@ -71,14 +116,12 @@ footer .tray-item {
 	box-sizing: border-box;
 	padding: 5px;
 }
-
 footer .datetime {
 	border-left: 2px solid #000;
 	border-top: 2px solid #000;
 	border-right: 2px solid #fff;
 	border-bottom: 2px solid #fff;
 }
-
 footer .start-button {
 	cursor: pointer;
 	border-left: 2px solid #fff;
@@ -86,12 +129,10 @@ footer .start-button {
 	border-right: 2px solid #000;
 	border-bottom: 2px solid #000;
 }
-
 footer .start-button img {
 	width: 30px;
 	height: auto;
 }
-
 footer .start-button:active {
 	transform: translateY(1px);
 	border-left: 2px solid #000;
@@ -99,11 +140,9 @@ footer .start-button:active {
 	border-right: 2px solid #fff;
 	border-bottom: 2px solid #fff;
 }
-
 footer .start-button span {
 	font-size: 1.35rem;
 }
-
 .window {
 	position: absolute !important;
 	left: 19%;
@@ -119,7 +158,6 @@ footer .start-button span {
 	display: flex;
 	flex-direction: column;
 }
-
 .window .window-bar {
 	display: flex;
 	justify-content: space-between;
@@ -130,25 +168,21 @@ footer .start-button span {
 	padding-top: 2px;
     padding-bottom: 2px;
 }
-
 .window .window-bar .window-title {
 	margin-left: 2px;
 	display: flex;
     align-items: center;
 }
-
 .window .window-bar .window-title span:first-of-type {
 	padding-left: 5px;
 	text-transform:capitalize;
 }
-
 .window .window-bar .window-controls {
 	margin-right: 2px;
 	height: 100%;
     display: flex;
     align-items: center;
 }
-
 .window .window-bar .window-controls .close-window {
 	border-radius: 0px;
 	border-left: 1px solid #fff;
@@ -162,21 +196,18 @@ footer .start-button span {
     height: 100%;
     background: #d6d4d4;
 }
-
 .window .window-bar .window-controls .close-window:active {
 	border-left: 1px solid #000;
 	border-top: 1px solid #000;
 	border-right: 1px solid #fff;
 	border-bottom: 1px solid #fff;
 }
-
 .window .window-content {
 	padding-left: 1px;
 	padding-top: 5px;
 	height: 100%;
 	overflow-y: hidden;
 }
-
 .window .window-content textarea {
 	resize: none;
     border: none;
@@ -189,16 +220,13 @@ footer .start-button span {
     font-family: courier !important;
     font-size: 1rem;
 }
-
 .window .window-content .icon-row .icon p {
 	color: #000 !important;
 }
-
 /* Utilities */
 .hidden {
 	display: none;
 }
-
 /* Media Queries */
 @media screen and (max-width: 992px) {
 	.text-doc, .application {
@@ -223,7 +251,6 @@ footer .start-button span {
 		font-size: 1.30rem;
 	}
 }
-
 @media screen and (max-width: 768px) {
 	.desktop {
 	  	height: 94vh;
@@ -245,6 +272,13 @@ footer .start-button span {
 	.logo h3 {
 	    font-size: 2.5rem;
 	}
+	.menu-items .menu-item .menu-icon a {
+		font-size: 1rem;
+	}
+	.menu-items .menu-item .menu-icon img {
+		width: 40px;
+		height: auto;
+	}
 	footer {
 		height: 6vh;
 	}
@@ -256,7 +290,6 @@ footer .start-button span {
 		font-size: 1rem;
 	}
 }
-
 @media only screen and (max-height: 674px) {
 	.desktop {
 	  	height: 94vh;
@@ -300,7 +333,6 @@ footer .start-button span {
 		font-size: 0.9rem;
 	}
 }
-
 @media only screen and (max-height: 414px) {
 	.desktop {
 	  	height: 93vh;
@@ -344,24 +376,19 @@ footer .start-button span {
 		font-size: 0.8rem;
 	}
 }
-
 .fa-envelope {
 	color: #d6d4d4 !important;
 }
-
 .fa-linkedin {
 	color: #0a66c2 !important;
 }
-
 .fa-github {
 	color: #1b1f23 !important;
 }
-
 .window-title img {
 	width: 32px;
     height: 20px;
 }
-
 .window-title i.fa {
 	font-size: 23px;
 }

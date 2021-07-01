@@ -14,7 +14,6 @@ $(document).ready(function() {
 			var offset = numWindows * 20;
 			var left = 360 + offset;
 			var top = 220 + offset;
-			console.log(numWindows);
 			var style = "position: relative; left: " + left + "px; top: " + top + "px;";
 			$windowElem.attr("style", style)
 			var url = "/window?type=" + windowType + "&filename=" + windowName;
@@ -53,6 +52,14 @@ $(document).on("click", ".close-window", function() {
 	// var windowName = $(this).parent().siblings(".window-title").find("span").text();
 	$("div[data-window=\"" + windowName + "\"][data-type=\"folder\"] > a").children("img:first").remove();
 	$("div[data-window=\"" + windowName + "\"][data-type=\"folder\"] > a").append("<img src=\"images/folder-closed-full.png\" width=\"80px\" height=\"60px\">")
+});
+
+$(document).on("click", ".start-button", function() {
+	$("#start-menu").toggleClass("hidden");
+});
+
+$(document).on("click", ".desktop", function() {
+	$("#start-menu").addClass("hidden");
 });
 
 function startTime() {
