@@ -11,10 +11,10 @@ $(document).ready(function() {
 			$windowElem.removeClass("hidden");
 			$windowElem.draggable();
 			var numWindows = $("div.window").length;
-			var offset = numWindows * 20;
-			var left = 360 + offset;
-			var top = 220 + offset;
-			var style = "position: relative; left: " + left + "px; top: " + top + "px;";
+			var offset = numWindows * 1.5;
+			var left = 19 + offset;
+			var top = 17 + offset;
+			var style = "position: relative; left: " + left + "%; top: " + top + "%;";
 			$windowElem.attr("style", style)
 			var url = "/window?type=" + windowType + "&filename=" + windowName;
 
