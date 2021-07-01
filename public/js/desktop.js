@@ -1,11 +1,5 @@
 $(document).ready(function() {
-	// var dt = new Date();
-	// var ampm = (dt.getHours() >= 12) ? "PM" : "AM";
-	// var time = dt.getHours().toString().padStart(2, '0') + ":" + dt.getMinutes().toString().padStart(2, '0') + " " + ampm;
-	
-	// $(".datetime").text(time);
 	startTime();
-
 
 	$(".icon").on("click", function() {
 		var windowName = $(this).data("window");
@@ -28,11 +22,15 @@ $(document).ready(function() {
 						$windowElem.find(".window-content").html("<textarea></textarea>")
 						$windowElem.find(".window-content textarea").val(res)
 					} else {
-
 						$windowElem.find(".window-title").append(windowName);
 						$windowElem.find(".window-title").html("<img src=\"images/folder-open-full.png\"> " + "<span>" + windowName + "</span>")
 						$windowElem.find(".window-content").html("<div class=\"icon-row\"></div>")
-						$windowElem.find(".window-content .icon-row").append(res)
+						$windowElem.find(".window-content .icon-row").append(res);
+
+						if (res != "") {
+							$("div[data-window=\"" + windowName + "\"] > a").children("img:first").remove();
+							$("div[data-window=\"" + windowName + "\"] > a").append("<img src=\"images/folder-open-full.png\" width=\"80px\" height=\"60px\">")
+						}
 					}
 					
 				}
@@ -45,6 +43,10 @@ $(document).ready(function() {
 
 $(document).on("click", ".close-window", function() {
 	$(this).closest(".window").remove();
+	var windowName = $(this).parent().siblings(".window-title").find("span").text();
+	console.log(windowName);
+	$("div[data-window=\"" + windowName + "\"] > a").children("img:first").remove();
+	$("div[data-window=\"" + windowName + "\"] > a").append("<img src=\"images/folder-closed-full.png\" width=\"80px\" height=\"60px\">")
 });
 
 function startTime() {
@@ -63,7 +65,6 @@ function startTime() {
 
   	let t = setTimeout(startTime, 1000);
 }
-
 
 function checkTime(i) {
 	if (i < 10) {i = "0" + i};
