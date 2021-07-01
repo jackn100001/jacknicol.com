@@ -8,20 +8,33 @@ $(document).ready(function() {
 
 
 	$(".icon").on("click", function() {
-		var windowName = $(this).data('window');
+		var windowName = $(this).data("window");
+		var windowType = $(this).data("type");
 
 		if ($("#" + windowName).length == 0 && windowName != "none") {
 			var $windowElem = $("#window-template").clone();
 			$windowElem.attr("id", windowName);
 			$windowElem.removeClass("hidden");
 			$windowElem.draggable();
-			$windowElem.find(".window-title").append(windowName + ".txt");
+
+			var url = "/window?type=" + windowType + "&filename=" + windowName;
 
 			$.ajax({
-				url: "/text-file?filename=" + windowName,
+				url: url,
 				type: "GET",
 				success: function(res) {
-					$windowElem.find(".window-content textarea").val(res)
+					if (windowType == "text-file") {
+						$windowElem.find(".window-title").html("<i class=\"fa fa-file-text\"></i> " + "<span>" + windowName + "</span>" + ".txt")
+						$windowElem.find(".window-content").html("<textarea></textarea>")
+						$windowElem.find(".window-content textarea").val(res)
+					} else {
+
+						$windowElem.find(".window-title").append(windowName);
+						$windowElem.find(".window-title").html("<img src=\"images/folder-open-full.png\"> " + "<span>" + windowName + "</span>")
+						$windowElem.find(".window-content").html("<div class=\"icon-row\"></div>")
+						$windowElem.find(".window-content .icon-row").append(res)
+					}
+					
 				}
 			})
 
@@ -35,20 +48,20 @@ $(document).on("click", ".close-window", function() {
 });
 
 function startTime() {
-  	var today = new Date();
+  	let today = new Date();
 
-	var dd = String(today.getDate()).padStart(2, '0');
-	var mm = String(today.getMonth() + 1).padStart(2, '0');
-	var yyyy = today.getFullYear();
-	var currentDate = dd + '/' + mm + '/' + yyyy;
+	let dd = String(today.getDate()).padStart(2, '0');
+	let mm = String(today.getMonth() + 1).padStart(2, '0');
+	let yyyy = today.getFullYear();
+	let currentDate = dd + '/' + mm + '/' + yyyy;
 
-	var h = today.getHours();
-  	var m = today.getMinutes();
+	let h = today.getHours();
+  	let m = today.getMinutes();
   	m = checkTime(m);
 
   	$(".datetime").text(currentDate + " " + h + ":" + m);
 
-  	var t = setTimeout(startTime, 1000);
+  	let t = setTimeout(startTime, 1000);
 }
 
 

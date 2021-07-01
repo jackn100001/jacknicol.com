@@ -15,19 +15,29 @@ const port = process.env.PORT || "8000";
 /**
  *  App Configuration
  */
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + "/public"));
 
 /**
  * Routes Definitions
  */
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "views/") + 'index.html');
+    res.sendFile(path.join(__dirname, "views/") + "index.html");
 });
 
-app.get("/text-file", (req, res) => {
-    var filename = req.query.filename + ".txt";
-    var fs = require('fs');
-    fs.readFile("public/text/" + filename, 'utf8', function(err, data) {
+app.get("/window", (req, res) => {
+    var fs = require("fs");
+    var type = req.query.type;
+    var filename = req.query.filename;
+
+    if (type == "text-file") {
+        filename += ".txt";
+        filePath = "public/text/" + filename;
+    } else if (type == "folder") {
+        filename += ".html"
+        filePath = path.join(__dirname, "views/") + filename;
+    }
+    console.log(filePath)
+    fs.readFile(filePath, "utf8", function(err, data) {
         if (err) throw err;
         res.send(data);
     });

@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, p {
 	position:relative;
   	width: 100%;
   	height: 95vh;
-  	background: #017d80;
+  	background: #5f9ea0;
 }
 .logo {
 	position: absolute;
@@ -125,7 +125,7 @@ footer .start-button span {
 	justify-content: space-between;
 	align-items: center;
 	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
-	height: 25px;
+	height: 30px;
 	color: #fff;
 	padding-top: 2px;
     padding-bottom: 2px;
@@ -133,6 +133,13 @@ footer .start-button span {
 
 .window .window-bar .window-title {
 	margin-left: 2px;
+	display: flex;
+    align-items: center;
+}
+
+.window .window-bar .window-title span:first-of-type {
+	padding-left: 5px;
+	text-transform:capitalize;
 }
 
 .window .window-bar .window-controls {
@@ -181,6 +188,10 @@ footer .start-button span {
     padding: 0;
     font-family: courier !important;
     font-size: 1rem;
+}
+
+.window .window-content .icon-row .icon p {
+	color: #000 !important;
 }
 
 /* Utilities */
@@ -321,4 +332,25 @@ footer .start-button span {
 	footer .datetime {
 		font-size: 0.8rem;
 	}
+}
+
+.fa-envelope {
+	color: #d6d4d4 !important;
+}
+
+.fa-linkedin {
+	color: #0a66c2 !important;
+}
+
+.fa-github {
+	color: #1b1f23 !important;
+}
+
+.window-title img {
+	width: 32px;
+    height: 20px;
+}
+
+.window-title i.fa {
+	font-size: 23px;
 }
