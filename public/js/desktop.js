@@ -42,11 +42,11 @@ $(document).ready(function() {
 });
 
 $(document).on("click", ".close-window", function() {
+	var windowName = $(this).closest(".window").attr("id");
 	$(this).closest(".window").remove();
-	var windowName = $(this).parent().siblings(".window-title").find("span").text();
-	console.log(windowName);
-	$("div[data-window=\"" + windowName + "\"] > a").children("img:first").remove();
-	$("div[data-window=\"" + windowName + "\"] > a").append("<img src=\"images/folder-closed-full.png\" width=\"80px\" height=\"60px\">")
+	// var windowName = $(this).parent().siblings(".window-title").find("span").text();
+	$("div[data-window=\"" + windowName + "\"][data-type=\"folder\"] > a").children("img:first").remove();
+	$("div[data-window=\"" + windowName + "\"][data-type=\"folder\"] > a").append("<img src=\"images/folder-closed-full.png\" width=\"80px\" height=\"60px\">")
 });
 
 function startTime() {

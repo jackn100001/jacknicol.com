@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, p {
 }
 .text-doc, .application {
 	color: #fff;
-	font-size: 3rem;
+	font-size: 4rem;
 }
 .icon-row {
 	display: flex;
@@ -205,6 +205,10 @@ footer .start-button span {
 	    color: #fff;
 	    font-size: 2.5rem;
 	}
+	.icon a img {
+	    width: 45px;
+    	height: 35px;
+    }
 	.icon p {
 		font-size: 0.9rem;
 	}
@@ -228,6 +232,13 @@ footer .start-button span {
 	    color: #fff;
 	    font-size: 2rem;
 	}
+	.icon {
+	    width: 50px;
+	}
+	.icon a img {
+	    width: 40px;
+    	height: 30px;
+    }
 	.icon p {
 		font-size: 0.8rem;
 	}
