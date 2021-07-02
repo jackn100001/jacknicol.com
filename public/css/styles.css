@@ -5,11 +5,9 @@ body {
 	font-family: sans-serif;
 	box-sizing: border-box;
 }
-
 h1, h2, h3, h4, h5, p {
 	margin: 0;
 }
-
 /* Components */
 .desktop {
 	position:relative;
@@ -99,7 +97,6 @@ h1, h2, h3, h4, h5, p {
 .menu-items .menu-item .menu-icon a:visited {
 	color: #000;
 }
-
 footer {
 	height: 5vh;
 	background: #d6d4d4;
@@ -266,6 +263,9 @@ footer .start-button span {
 	    width: 40px;
     	height: 30px;
     }
+    .window .window-content textarea {
+    	font-size: 0.7rem;
+    }
 	.icon p {
 		font-size: 0.8rem;
 	}
@@ -350,6 +350,24 @@ footer .start-button span {
 	.icon p {
 		font-size: 0.5rem;
 		margin-top: 0.2rem;
+	}
+	.text-doc, .application {
+	    color: #fff;
+	    font-size: 2rem;
+	}
+	.icon a img {
+	    width: 35px;
+    	height: 25px;
+    }
+    .window .window-content textarea {
+    	font-size: 0.7rem;
+    }
+	.menu-items .menu-item .menu-icon a {
+		font-size: 1rem;
+	}
+	.menu-items .menu-item .menu-icon img {
+		width: 20px;
+		height: auto;
 	}
 	.logo {
 	    position: absolute;
